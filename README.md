@@ -1,4 +1,4 @@
-# Arduino LCD Custom Characters ❤️
+# Arduino LCD Custom Characters 
 
 A hands-on Arduino project exploring how to create and display **custom characters** on a 16×2 character LCD.
 
@@ -8,7 +8,7 @@ This project builds on the basic LCD concepts learned in previous projects and i
 
 ---
 
-## 📌 What This Project Does
+## What This Project Does
 
 The Arduino creates a custom heart:
 
@@ -33,7 +33,7 @@ The character is created entirely from binary data.
 
 ---
 
-# 🧰 Components
+#  Components
 
 ### Hardware
 
@@ -73,7 +73,7 @@ The LCD is operated in **4-bit mode**.
 
 ---
 
-# 🧠 How Custom Characters Work
+#  How Custom Characters Work
 
 A standard character LCD, such as an HD44780-compatible 16×2 display, normally contains a built-in character set.
 
@@ -98,7 +98,7 @@ CGRAM allows us to define our own characters.
 
 ---
 
-# 🔲 The 5×8 Character Matrix
+#  The 5×8 Character Matrix
 
 A custom character is built using a matrix that is:
 
@@ -152,7 +152,7 @@ Combining all eight rows produces the complete character.
 
 ---
 
-# ❤️ Creating the Heart
+# Creating the Heart
 
 The heart is represented in the Arduino program as an array containing eight bytes:
 
@@ -187,7 +187,7 @@ represents:
 
 ---
 
-# 💾 CGRAM Character Slots
+#  CGRAM Character Slots
 
 The LCD provides space for **8 custom characters** at a time.
 
@@ -226,7 +226,7 @@ and so on.
 
 ---
 
-# 🖥️ Displaying the Character
+# Displaying the Character
 
 Once the character has been stored, it can be displayed using:
 
@@ -276,7 +276,7 @@ lcd.write(byte(0))
 
 ---
 
-# 💻 Complete Code
+#  Complete Code
 
 ```cpp
 #include <LiquidCrystal.h>
@@ -329,7 +329,7 @@ void loop() {
 
 ---
 
-# 🧩 Important Functions
+# Important Functions
 
 ## `lcd.createChar()`
 
@@ -372,7 +372,7 @@ lcd.print("A");
 
 ---
 
-# 🧪 Experimenting With Characters
+#  Experimenting With Characters
 
 Once the basic heart works, the interesting part is creating your own designs.
 
@@ -408,7 +408,7 @@ This makes the LCD behave almost like a tiny **5×8 monochrome display**.
 
 ---
 
-# 🐛 Problem Encountered
+#  Problem Encountered
 
 ## `'lcd' does not name a type`
 
@@ -429,7 +429,7 @@ byte heart[8] = {
   ...
 };
 
-lcd.createChar(0, heart); // ❌
+lcd.createChar(0, heart); // 
 ```
 
 The Arduino/C++ compiler interpreted this as something that didn't belong in the global declaration area.
@@ -467,7 +467,7 @@ lcd.print(...);
 
 ---
 
-# 📚 Concepts Learned
+#  Concepts Learned
 
 ### LCD
 
@@ -504,7 +504,7 @@ lcd.print(...);
 
 ---
 
-# 🔬 What Is Happening Underneath?
+#  What Is Happening Underneath?
 
 The Arduino code looks simple:
 
@@ -540,29 +540,8 @@ Later, this project can be revisited without `LiquidCrystal` to understand exact
 
 ---
 
-# 🚧 Future Experiments
-
-Possible extensions to this project:
-
-* [ ] Create all 8 custom-character slots
-* [ ] Create arrows for a menu system
-* [ ] Create battery icons
-* [ ] Create signal-strength icons
-* [ ] Create temperature symbols
-* [ ] Create animation frames
-* [ ] Create a loading animation
-* [ ] Build a custom LCD menu using custom characters
-* [ ] Explore CGRAM limitations
-* [ ] Control the LCD directly without `LiquidCrystal`
-
----
-
-# 🎯 Project Goal
+#  Project Goal
 
 The goal of this project was not simply to create a heart.
 
 The goal was to understand that a character LCD can be treated as a small programmable display where custom pixel patterns can be stored in memory and later displayed.
-
-This project is the foundation for the next stage:
-
-> **Building an LCD menu system using buttons, states, and custom characters.**
